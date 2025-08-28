@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: cd website && npm ci
 
-      - name: Build
-        run: cd website && npm run build
+      - name: Clean and Build
+        run: cd website && rm -rf dist && npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

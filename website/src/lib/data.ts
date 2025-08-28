@@ -1,6 +1,6 @@
 import type { PositionsCurrent, Snapshot } from '../types/data';
 
-const DATA_BASE_PATH = '/data';
+const DATA_BASE_PATH = import.meta.env.BASE_URL + 'data';
 
 export async function getPositionsCurrent(): Promise<PositionsCurrent> {
   const response = await fetch(`${DATA_BASE_PATH}/positions_current.json`);
