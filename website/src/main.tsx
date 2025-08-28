@@ -5,11 +5,19 @@ import Layout from './components/Layout.tsx'
 import Dashboard from './pages/Dashboard.tsx'
 import Charts from './pages/Charts.tsx'
 
+const basePath = import.meta.env.BASE_URL;
+const currentPath = window.location.pathname;
+const relativePath = currentPath.startsWith(basePath) 
+  ? currentPath.substring(basePath.length) 
+  : currentPath;
+
 let Page;
-switch (window.location.pathname) {
+switch (relativePath) {
+  case '':
   case '/':
     Page = Dashboard;
     break;
+  case 'charts':
   case '/charts':
     Page = Charts;
     break;

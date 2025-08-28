@@ -26,10 +26,10 @@ function Layout({ children }: LayoutProps) {
       <nav className="bg-gray-800 p-4 flex justify-between items-center">
         <ul className="flex space-x-4">
           <li>
-            <a href="/" className="text-white">Dashboard</a>
+            <a href={import.meta.env.BASE_URL} className="text-white">Dashboard</a>
           </li>
           <li>
-            <a href="/charts" className="text-white">Charts</a>
+            <a href={import.meta.env.BASE_URL + 'charts'} className="text-white">Charts</a>
           </li>
         </ul>
         <button onClick={toggleTheme} className="text-white">
