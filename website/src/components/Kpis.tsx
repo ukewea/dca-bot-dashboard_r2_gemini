@@ -1,4 +1,4 @@
-import { PositionsCurrent } from '../types/data';
+import type { PositionsCurrent } from '../types/data';
 
 interface KpisProps {
   data: PositionsCurrent & { total_market_value: string, total_unrealized_pl: string };

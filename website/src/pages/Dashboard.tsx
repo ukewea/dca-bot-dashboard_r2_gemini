@@ -20,11 +20,11 @@ function Dashboard() {
 
   const latestSnapshot = snapshots?.[snapshots.length - 1];
 
-  const kpiData = positions && latestSnapshot ? {
+  const kpiData = positions ? {
     ...positions,
-    total_market_value: latestSnapshot.total_market_value,
-    total_unrealized_pl: latestSnapshot.total_unrealized_pl,
-  } : positions;
+    total_market_value: latestSnapshot?.total_market_value || '0.00',
+    total_unrealized_pl: latestSnapshot?.total_unrealized_pl || '0.00',
+  } : null;
 
   return (
     <div className="p-4">
